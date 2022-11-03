@@ -28,19 +28,19 @@ public class PathGenerator
 
             while (!validMove)
             {
-                int move = Random.Range(0, 3);
+                int move = Random.Range(0, 7);
 
                 if (move == 0 || x % 2 == 0 || x > (width - 2))
                 {
                     x++;
                     validMove = true;
                 }
-                else if (move == 1 && CellIsEmpty(x, y+1) && y < (height - 2))
+                else if (move %2 == 1 && CellIsEmpty(x, y+1) && y < (height - 2))
                 {
                     y++;
                     validMove = true;
                 }
-                else if (move == 2 && CellIsEmpty(x, y - 1) && y > 2)
+                else if (move % 2 == 0 && CellIsEmpty(x, y - 1) && y > 2)
                 {
                     y--;
                     validMove = true;

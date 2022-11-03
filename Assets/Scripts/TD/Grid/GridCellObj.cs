@@ -10,5 +10,14 @@ public class GridCellObj : ScriptableObject
     public CellType cellType;
     public GameObject cellPrefab;
     public int yRotation;
+    public bool built = false;
+    public bool buildable()
+    {
+        if(!built && cellType == CellType.Ground)
+        {
+            return true;
+        }
+        return false;
+    }
 
 }
