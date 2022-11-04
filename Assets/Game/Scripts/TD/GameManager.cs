@@ -5,14 +5,14 @@ using System;
 
 public class GameManager : Singleton<GameManager>
 {
-    // for testing
-    [SerializeField] private GameObject towerPrefab;
+    // for testing - Buildable Towers
+    [SerializeField] private TowerBase tower;
 
-    public GameObject TowerPrefab
+    public TowerBase Tower
     {
         get
         {
-            return towerPrefab;
+            return tower;
         }
     }
 }

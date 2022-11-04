@@ -5,6 +5,7 @@ using UnityEngine;
 public class GridCellBehaviors : MonoBehaviour
 {
     public bool Path;
+    public TowerBase tower { get; set; }
 
     private void OnMouseOver()
     {
@@ -20,11 +21,11 @@ public class GridCellBehaviors : MonoBehaviour
 
     private void PlaceTower()
     {
-        GameObject tower = GameManager.Instance.TowerPrefab;
+        tower = GameManager.Instance.Tower;
 
         float x = this.transform.position.x;
         float z = this.transform.position.z;
 
-        Instantiate(tower, new Vector3(x, 0f, z), Quaternion.identity);
+       Instantiate(tower.TowerModel, new Vector3(x, 0f, z), Quaternion.identity);
     }
 }

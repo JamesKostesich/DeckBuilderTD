@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e982e8e7045e541b42594ea93f3006, type: 3}
   m_Name: WaterTower
   m_EditorClassIdentifier: 
-  AttackDamage: 0
-  AttackSpeed: 0
-  towerPrefab: {fileID: 8750884156854263420, guid: f716360b8ad8ac246898cedba71109c6, type: 3}
-  turretRotationCenter: 0
+  title: Water Tower
+  description: testestestset
+  towerModel: {fileID: 8750884156854263420, guid: f716360b8ad8ac246898cedba71109c6, type: 3}
+  attackDamage: 1
+  attackSpeed: 1
+  elementType: 1
