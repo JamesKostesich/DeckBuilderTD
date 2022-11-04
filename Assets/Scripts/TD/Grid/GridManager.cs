@@ -11,9 +11,8 @@ public class GridManager : MonoBehaviour
     public float pathDelay = 0.05f;
     public float groundDelay = 0.025f;
 
-    public GridCellObj[] pathCellObjects;
-    public GridCellObj[] sceneryCellObjects;
-    public TowerObj[] TowerObjs;
+    public GridCellBase[] basePath;
+    public GridCellBase[] baseGround;
 
     private PathGenerator path;
     Vector3 worldPosition;
@@ -32,38 +31,24 @@ public class GridManager : MonoBehaviour
         }
 
         StartCoroutine(CreateGrid(pathCells));
-        buildTower(TowerObjs[0],new Vector2Int(2,2));
     }
-
-    private Vector2Int getMousePos()
-    {
-        //Vector3 mousePos = Input.mousePosition;
-        //Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = Camera.main.nearClipPlane;
-        worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
-        int x = (int)Mathf.Floor(worldPosition.x);
-        int y = (int)Mathf.Floor(worldPosition.y);
-
-        return new Vector2Int(x, y);
-    }
-    public void Update()
-    {
-        
-        if (Input.GetMouseButtonDown(0))
-        {
-            buildTower(TowerObjs[0], getMousePos());
-            print(getMousePos());
-            print("hello");
-        }
-    }
-   
 
     IEnumerator CreateGrid(List<Vector2Int> pathCells)
     {
         yield return LayPathCells(pathCells);
         yield return LaySceneryCells();
-        
+    }
+
+    private bool IsBuildable(int i)
+    {
+        if (basePath[i].Type == GridCellBase.CellType.Path)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     private IEnumerator LayPathCells(List<Vector2Int> pathCells)
@@ -71,11 +56,10 @@ public class GridManager : MonoBehaviour
         foreach (Vector2Int pathCell in pathCells)
         {
             int neighbourValue = path.getCellNeighbourValue(pathCell.x, pathCell.y);
-            Debug.Log("Tile " + pathCell.x + ", " + pathCell.y + " neighbour value = " + neighbourValue);
-            GameObject pathTile = pathCellObjects[neighbourValue].cellPrefab;
-            GameObject pathTileCell = Instantiate(pathTile, new Vector3(pathCell.x, 0f, pathCell.y), Quaternion.identity);
-            pathTileCell.transform.Rotate(0f, pathCellObjects[neighbourValue].yRotation, 0f, Space.Self);
 
+            GameObject cell = Instantiate(basePath[neighbourValue].CellPrefab, new Vector3(pathCell.x, 0f, pathCell.y), Quaternion.identity);
+            cell.transform.Rotate(0f, basePath[neighbourValue].Rotation, 0f, Space.Self);
+            
             yield return new WaitForSeconds(pathDelay);
         }
 
@@ -90,18 +74,14 @@ public class GridManager : MonoBehaviour
             {
                 if (path.CellIsEmpty(x, y))
                 {
-                    int randomSceneryCellIndex = Random.Range(0, sceneryCellObjects.Length);
-                    Instantiate(sceneryCellObjects[randomSceneryCellIndex].cellPrefab, new Vector3(x, 0f, y), Quaternion.identity);
+                    int rand = Random.Range(0, baseGround.Length);
+                    GameObject cell = Instantiate(baseGround[rand].CellPrefab, new Vector3(x, 0f, y), Quaternion.identity);
+
                     yield return new WaitForSeconds(groundDelay);
                 }
             }
         }
 
         yield return null;
-    }
-    public void buildTower(TowerObj tower, Vector2Int location)
-    {
-        GameObject towerObj = tower.towerPrefab;
-        Instantiate(towerObj, new Vector3(location.x, 0f, location.y), Quaternion.identity);
     }
 }

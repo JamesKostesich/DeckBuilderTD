@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda0a83d8b06fa2429aee27a6872a5fd, type: 3}
   m_Name: Corner 3
   m_EditorClassIdentifier: 
-  cellType: 0
-  cellPrefab: {fileID: 919132149155446097, guid: 2bbc1328723a94c4eb17d04d7b899bc3, type: 3}
+  name: Path
+  description: 
+  type: 0
+  cellPrefab: {fileID: 4173286332795072641, guid: d3c766fafefa95d48832e5eafd1ab5f4, type: 3}
   yRotation: 180

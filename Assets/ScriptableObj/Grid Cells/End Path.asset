@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda0a83d8b06fa2429aee27a6872a5fd, type: 3}
   m_Name: End Path
   m_EditorClassIdentifier: 
-  cellType: 0
-  cellPrefab: {fileID: 919132149155446097, guid: 72c205eecc14553489732253f31cbea4, type: 3}
+  name: 
+  description: 
+  type: 0
+  cellPrefab: {fileID: 2338641024528740874, guid: 5ffd850e5fb82814aa2447f6771282d9, type: 3}
   yRotation: -90

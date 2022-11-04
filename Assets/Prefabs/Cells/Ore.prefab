@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5434671631499706362}
   - component: {fileID: 8990326816168325215}
   - component: {fileID: 6566522939971290261}
-  - component: {fileID: 974149994720142416}
+  - component: {fileID: -5824862258858739533}
+  - component: {fileID: 6924709884497048585}
   m_Layer: 0
   m_Name: Ore
   m_TagString: Untagged
@@ -86,7 +87,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &974149994720142416
+--- !u!114 &-5824862258858739533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4620699413589714240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50fb2cd8d018cd143aadaba091cc48d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: 1
+--- !u!65 &6924709884497048585
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +108,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4620699413589714240}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 0.2, z: 1}
