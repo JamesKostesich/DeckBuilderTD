@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Tower
 {
-    TowerBase _base;
+    public TowerBase _base;
     int level;
+    public GameObject towerObj;
 
-    public Tower(TowerBase tBase, int tLevel)
+    public Tower(TowerBase tBase, int tLevel = 1)
     {
         _base = tBase;
         level = tLevel;
