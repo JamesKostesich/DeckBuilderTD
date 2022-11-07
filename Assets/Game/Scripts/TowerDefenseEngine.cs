@@ -10,7 +10,7 @@ public class TowerDefenseEngine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gridManager = new GridManager();
+        //gridManager = GameObject.FindGameObjectWithTag("GameManager").GetComponents();
     }
 
     // Update is called once per frame

@@ -11,7 +11,7 @@ public class GridCellBehaviors : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!buildable)
+            if (buildable)
             {
                 PlaceTower();
                 this.buildable = true;

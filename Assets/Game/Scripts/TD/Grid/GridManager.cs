@@ -91,7 +91,7 @@ public class GridManager : MonoBehaviour
                     int rand = Random.Range(0, baseGround.Length);
                     GameObject cell = Instantiate(baseGround[rand].CellPrefab, new Vector3(x, 0f, y), Quaternion.identity);
                     grid[x, y] = cell;
-                    cell.tag = "not path";
+                    //cell.tag = "not path";
                     yield return new WaitForSeconds(groundDelay);
                 }
             }
