@@ -13,12 +13,7 @@ MonoBehaviour:
   m_Name: CreepWave1
   m_EditorClassIdentifier: 
   title: 
-  creeps:
-  - {fileID: 11400000, guid: 92573ee2559ff3b4685f29829c489553, type: 2}
-  - {fileID: 11400000, guid: 92573ee2559ff3b4685f29829c489553, type: 2}
-  - {fileID: 11400000, guid: 92573ee2559ff3b4685f29829c489553, type: 2}
-  - {fileID: 11400000, guid: 92573ee2559ff3b4685f29829c489553, type: 2}
-  - {fileID: 11400000, guid: 92573ee2559ff3b4685f29829c489553, type: 2}
+  creepBases:
   - {fileID: 11400000, guid: 92573ee2559ff3b4685f29829c489553, type: 2}
   - {fileID: 11400000, guid: 92573ee2559ff3b4685f29829c489553, type: 2}
   - {fileID: 11400000, guid: 92573ee2559ff3b4685f29829c489553, type: 2}
