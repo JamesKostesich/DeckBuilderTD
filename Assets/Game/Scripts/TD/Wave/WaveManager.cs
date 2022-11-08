@@ -7,14 +7,13 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     CreepBase creepBase;
     GridManager gridManager;
-    [SerializeField] GameObject gameManager;
     List<Creep> creeps = new List<Creep>();
     [SerializeField] List<WaveBase> waveBases;
 
 
     private void Awake()
     {
-        gridManager = gameManager.GetComponent<GridManager>();
+        gridManager = GameManager.Instance.GetComponent<GridManager>();
     }
     void Start()
     {
@@ -25,6 +24,7 @@ public class WaveManager : MonoBehaviour
         Vector3 startPos = gridManager.StartCell.transform.position;
         Creep creep = new Creep(creepBase);
         creep.creepObj = Instantiate(creep._base.CreepModel, new Vector3(startPos.x, 0.5f, startPos.z), Quaternion.identity) as GameObject;
+        creep.creepBehaviour = creep.creepObj.GetComponent<CreepBehaviour>();
         creeps.Add(creep);
     }
     public IEnumerator spawnWave(List<CreepBase> wave, float delay)
@@ -45,6 +45,12 @@ public class WaveManager : MonoBehaviour
     }
     private void onLeak(Creep creep)
     {
+        killCreep(creep);
+        
+    }
+    public void killCreep(Creep creep)
+    {
+        creeps.Remove(creep);
         Destroy(creep.creepObj);
         
     }
@@ -65,18 +71,21 @@ public class WaveManager : MonoBehaviour
                 else
                 {
                     onLeak(creep);
-                    creeps.Remove(creep);
                     break;
                 }
             }
             Vector3 end = cp[creep.currentPath + 1].transform.position;
             end.y += .5f;
-            float moveSpeed = creep.MoveSpeed/1000;
+            float moveSpeed = creep.MoveSpeed * Time.deltaTime;
             creep.creepObj.transform.position = Vector3.MoveTowards(start, end, moveSpeed);
         }
     }
     public List<WaveBase> WaveBases
     {
         get { return waveBases; }
+    }
+    public List<Creep> Creeps
+    {
+        get { return creeps; }
     }
 }

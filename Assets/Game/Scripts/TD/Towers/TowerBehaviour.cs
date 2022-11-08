@@ -24,14 +24,15 @@ public class TowerBehaviour : MonoBehaviour
 
     //References
     private Transform target;
+    private Creep creepTarget;
     private Transform partToRotate;
     private Transform firePoint;
     private GameObject towerInfo;
     private TowerInfo stats;
+    private WaveManager waveManager;
 
     //Constants
     private float fireCountdown = 0f;
-
     void Start()
     {
         //Ref to Children
@@ -42,6 +43,9 @@ public class TowerBehaviour : MonoBehaviour
         towerInfo = GameManager.Instance.TowerInfo;
         stats = towerInfo.GetComponent<TowerInfo>();
 
+        //Ref to Managers
+        waveManager = GameManager.Instance.GetComponent<WaveManager>();
+
         //Frequency of update target
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
     }
@@ -49,20 +53,22 @@ public class TowerBehaviour : MonoBehaviour
     void UpdateTarget()
     {
         //Create list of objects with targetable tags
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(targetsAllowed);
-        
+        //GameObject[] enemies = GameObject.FindGameObjectsWithTag(targetsAllowed);
+        List<Creep> enemies = waveManager.Creeps;
         //Default values
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
-
+        Creep nearestCreep = null;
         //Find nearest enemy
-        foreach (GameObject enemy in enemies)
+        foreach (Creep enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            GameObject enemyObj = enemy.creepObj;
+            float distanceToEnemy = Vector3.Distance(transform.position, enemyObj.transform.position);
             if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
+                nearestEnemy = enemyObj;
+                nearestCreep = enemy;
             }
         }
 
@@ -70,10 +76,12 @@ public class TowerBehaviour : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+            creepTarget = nearestCreep;
         }
         else
         {
             target = null;
+            creepTarget = null;
         }
     }
 
@@ -105,7 +113,7 @@ public class TowerBehaviour : MonoBehaviour
         BulletBehaviour bullet = bulletGO.GetComponent<BulletBehaviour>();
 
         if (bullet != null)
-            bullet.Seek(target, projectileSpeed);
+            bullet.Seek(target, projectileSpeed, creepTarget, this);
     }
 
     void OnMouseDown()

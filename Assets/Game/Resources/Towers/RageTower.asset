@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6e982e8e7045e541b42594ea93f3006, type: 3}
-  m_Name: WaterTower
+  m_Name: RageTower
   m_EditorClassIdentifier: 
-  title: Water Tower
-  description: This tower makes even the the most skeptical athiest believe in holy
-    water!
+  title: 
+  description: This tower starts shooting slow, but picks up speed as time goes on
+    like the building rage of a hippo in heat.
   targetsAllowed: Enemy
-  range: 5
-  projectileSpeed: 8
-  turnSpeed: 5
-  damage: 1
-  attackSpeed: 5
+  range: 6
+  projectileSpeed: 20
+  turnSpeed: 0
+  damage: 10
+  attackSpeed: 0.1
   critChance: 10
-  critDamage: 3
+  critDamage: 2
   magicDamage: 0
   mana: 0
-  elementType: 1
-  towerModel: {fileID: 6721725256843352575, guid: f716360b8ad8ac246898cedba71109c6, type: 3}
+  elementType: 0
+  towerModel: {fileID: 0}
