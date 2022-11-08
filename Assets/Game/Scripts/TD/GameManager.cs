@@ -8,6 +8,9 @@ public class GameManager : Singleton<GameManager>
     // for testing - Buildable Towers
     [SerializeField] private TowerBase tower;
     [SerializeField] private CreepBase creep;
+
+    [SerializeField] private GameObject towerInfo;
+
     public GameObject[,] grid;
 
     public TowerBase Tower
@@ -22,6 +25,13 @@ public class GameManager : Singleton<GameManager>
         get
         {
             return creep;
+        }
+    }
+    public GameObject TowerInfo
+    {
+        get
+        {
+            return towerInfo;
         }
     }
 }

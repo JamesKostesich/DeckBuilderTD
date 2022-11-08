@@ -13,8 +13,17 @@ MonoBehaviour:
   m_Name: WaterTower
   m_EditorClassIdentifier: 
   title: Water Tower
-  description: testestestset
-  towerModel: {fileID: 8750884156854263420, guid: f716360b8ad8ac246898cedba71109c6, type: 3}
-  attackDamage: 1
+  description: This tower makes even the the most skeptical athiest believe in holy
+    water!
+  targetsAllowed: Enemy
+  range: 5
+  projectileSpeed: 8
+  turnSpeed: 5
+  damage: 1
   attackSpeed: 1
+  critChance: 5
+  critDamage: 2.1
+  magicDamage: 0
+  mana: 0
   elementType: 1
+  towerModel: {fileID: 6721725256843352575, guid: f716360b8ad8ac246898cedba71109c6, type: 3}
