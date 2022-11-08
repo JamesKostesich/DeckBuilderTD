@@ -6,16 +6,23 @@ using UnityEngine;
 public class TowerBase : ScriptableObject
 {
     [SerializeField] string title;
-
     [TextArea]
     [SerializeField] string description;
 
-    [SerializeField] GameObject towerModel;
+    [SerializeField] string targetsAllowed = "Enemy";
+    [SerializeField] float range;
+    [SerializeField] float projectileSpeed;
+    [SerializeField] float turnSpeed;
 
-    [SerializeField] int attackDamage;
-    [SerializeField] int attackSpeed;
+    [SerializeField] float damage;
+    [SerializeField] float attackSpeed;
+    [SerializeField] float critChance;
+    [SerializeField] float critDamage;
+    [SerializeField] float magicDamage;
+    [SerializeField] float mana;
 
     [SerializeField] Element elementType;
+    [SerializeField] GameObject towerModel;
 
     public enum Element { Fire, Water }
 
@@ -27,20 +34,52 @@ public class TowerBase : ScriptableObject
     {
         get { return description; }
     }
-    public GameObject TowerModel
+    public string TargetsAllowed
     {
-        get { return towerModel; }
+        get { return targetsAllowed; }
     }
-    public int AttackDamage
+    public float Range
     {
-        get { return attackDamage; }
+        get { return range; }
     }
-    public int AttackSpeed
+    public float ProjectileSpeed
+    {
+        get { return projectileSpeed; }
+    }
+    public float Damage
+    {
+        get { return damage; }
+    }
+    public float AttackSpeed
     {
         get { return attackSpeed; }
+    }
+    public float CritChance
+    {
+        get { return critChance; }
+    }
+    public float CritDamage
+    {
+        get { return critDamage; }
+    }
+    public float MagicDamage
+    {
+        get { return magicDamage; }
+    }
+    public float Mana
+    {
+        get { return mana; }
+    }
+    public float TurnSpeed
+    {
+        get { return turnSpeed; }
     }
     public Element ElementType
     {
         get { return elementType; }
+    }
+    public GameObject TowerModel
+    {
+        get { return towerModel; }
     }
 }

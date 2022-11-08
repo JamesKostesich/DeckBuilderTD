@@ -78,16 +78,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c92d98e716a9d408a88f9cbcf6ce43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerName: Water Tower
-  description: This tower makes even the the most skeptical athiest believe in holy
-    water!
-  targetsAllowed: Enemy
-  range: 8
-  projectileSpeed: 8
-  attackSpeed: 1
+  title: 
+  description: 
+  targetsAllowed: 
+  range: 0
+  projectileSpeed: 0
   damage: 0
-  critChance: 10
-  critDamage: 2
+  attackSpeed: 0
+  critChance: 0
+  critDamage: 0
   magicDamage: 0
   mana: 0
   turnSpeed: 10

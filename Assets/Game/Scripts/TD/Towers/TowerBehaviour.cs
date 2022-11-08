@@ -4,48 +4,58 @@ using UnityEngine;
 
 public class TowerBehaviour : MonoBehaviour
 {
-    private Transform target;
-
-    [Header("Attributes")]
-    public string towerName;
+    public string title;
     public string description;
+    
+    //Targeting and Shooting
     public string targetsAllowed = "Enemy";
     public float range;
     public float projectileSpeed;
-    
-    public float attackSpeed;
+    public float turnSpeed;
+    public GameObject bulletPrefab;
+
+    //Stats
     public float damage;
+    public float attackSpeed;
     public float critChance;
     public float critDamage;
     public float magicDamage;
     public float mana;
 
-    [Header("Setup Data")]
-    public float turnSpeed;
-    public GameObject bulletPrefab;
-
-    private float fireCountdown = 0f;
+    //References
+    private Transform target;
     private Transform partToRotate;
     private Transform firePoint;
-
     private GameObject towerInfo;
+    private TowerInfo stats;
+
+    //Constants
+    private float fireCountdown = 0f;
 
     void Start()
     {
+        //Ref to Children
         partToRotate = this.transform.GetChild(0);
         firePoint = partToRotate.GetChild(0);
 
+        //Ref to UI
         towerInfo = GameManager.Instance.TowerInfo;
+        stats = towerInfo.GetComponent<TowerInfo>();
 
+        //Frequency of update target
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
     }
 
     void UpdateTarget()
     {
+        //Create list of objects with targetable tags
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(targetsAllowed);
+        
+        //Default values
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
+        //Find nearest enemy
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
@@ -56,6 +66,7 @@ public class TowerBehaviour : MonoBehaviour
             }
         }
 
+        //If nearest enemy in range set it to target
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
@@ -99,15 +110,15 @@ public class TowerBehaviour : MonoBehaviour
 
     void OnMouseDown()
     {
-        towerInfo.GetComponent<TowerInfo>().nameText.text = towerName;
-        towerInfo.GetComponent<TowerInfo>().descText.text = description;
+        stats.nameText.text = title;
+        stats.descText.text = description;
 
-        towerInfo.GetComponent<TowerInfo>().damage.text = damage.ToString();
-        towerInfo.GetComponent<TowerInfo>().speed.text = attackSpeed.ToString();
-        towerInfo.GetComponent<TowerInfo>().critChance.text = new string(critChance.ToString() + "%");
-        towerInfo.GetComponent<TowerInfo>().critDamage.text = new string("x" + critDamage.ToString());
-        towerInfo.GetComponent<TowerInfo>().magicDamage.text = magicDamage.ToString();
-        towerInfo.GetComponent<TowerInfo>().mana.text = mana.ToString();
+        stats.damage.text = damage.ToString();
+        stats.speed.text = attackSpeed.ToString();
+        stats.critChance.text = new string(critChance.ToString() + "%");
+        stats.critDamage.text = new string("x" + critDamage.ToString());
+        stats.magicDamage.text = magicDamage.ToString();
+        stats.mana.text = mana.ToString();
 
         towerInfo.SetActive(true);
     }
