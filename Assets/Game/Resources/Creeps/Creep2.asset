@@ -16,5 +16,5 @@ MonoBehaviour:
   description: 
   creepModel: {fileID: 8222188075212726623, guid: 42647676283da4a41b17908c390e96f4, type: 3}
   health: 0
-  moveSpeed: 20
+  moveSpeed: 5
   elementType: 0

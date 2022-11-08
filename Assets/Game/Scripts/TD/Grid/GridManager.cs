@@ -16,7 +16,7 @@ public class GridManager : MonoBehaviour
     public GameObject[,] grid;
     private GameObject startCell;
     private GameObject endCell;
-    public WaveManager waveManager;
+    private WaveManager waveManager;
 
     private PathGenerator path;
     Vector3 worldPosition;

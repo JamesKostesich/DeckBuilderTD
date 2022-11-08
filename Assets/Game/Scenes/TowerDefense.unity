@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 38707491}
   - component: {fileID: 38707490}
   m_Layer: 5
-  m_Name: Text
+  m_Name: CritChance Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,10 +427,10 @@ RectTransform:
   m_Father: {fileID: 1905267170}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 290, y: -250}
+  m_SizeDelta: {x: 270, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &349088019
 GameObject:
@@ -827,7 +827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 615999688}
   m_Layer: 5
-  m_Name: Crit Damage (1)
+  m_Name: Magic Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,10 +849,10 @@ RectTransform:
   m_Father: {fileID: 1905267170}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 290, y: -370}
+  m_SizeDelta: {x: 270, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &705507993
 GameObject:
@@ -1061,10 +1061,10 @@ RectTransform:
   m_Father: {fileID: 1905267170}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 290, y: -130}
+  m_SizeDelta: {x: 270, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &888953821
 GameObject:
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 888953824}
   - component: {fileID: 888953823}
   m_Layer: 5
-  m_Name: Text
+  m_Name: CritDamage Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1330,7 +1330,7 @@ GameObject:
   - component: {fileID: 1118772394}
   - component: {fileID: 1118772393}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Mana Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1408,7 +1408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1278172425}
   m_Layer: 5
-  m_Name: Crit Damage (2)
+  m_Name: Mana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1430,10 +1430,10 @@ RectTransform:
   m_Father: {fileID: 1905267170}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 580, y: -370}
+  m_SizeDelta: {x: 270, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1284062799
 GameObject:
@@ -1493,7 +1493,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d229fcffcc583ff42a986626581c37a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b85949b25d22d84ba5cb113423f0f85, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1599,7 +1599,7 @@ GameObject:
   - component: {fileID: 1334897342}
   - component: {fileID: 1334897341}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Damage Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1679,7 +1679,7 @@ GameObject:
   - component: {fileID: 1358915378}
   - component: {fileID: 1358915377}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Speed Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1779,10 +1779,10 @@ RectTransform:
   m_Father: {fileID: 1905267170}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 580, y: -250}
+  m_SizeDelta: {x: 270, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1480681198
 GameObject:
@@ -1852,9 +1852,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7aea0216c7b02141b945700d1dff2c9, type: 2}
   - {fileID: 11400000, guid: 0d3cc0beebc70d840a1f8b47ec81dfff, type: 2}
   - {fileID: 11400000, guid: 74582a1e201be8d4782d76009553ab75, type: 2}
-  startCell: {fileID: 0}
-  endCell: {fileID: 0}
-  waveManager: {fileID: 0}
+  creepPath: []
 --- !u!4 &1480681200
 Transform:
   m_ObjectHideFlags: 0
@@ -1884,6 +1882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower: {fileID: 11400000, guid: 9840ef567cbf6224394f260db0aaabdc, type: 2}
   creep: {fileID: 11400000, guid: 92573ee2559ff3b4685f29829c489553, type: 2}
+  towerInfo: {fileID: 1888420453}
 --- !u!114 &1480681202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2022,10 +2021,10 @@ RectTransform:
   m_Father: {fileID: 1905267170}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 580, y: -130}
+  m_SizeDelta: {x: 270, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1695495243
 GameObject:
@@ -2293,13 +2292,14 @@ GameObject:
   - component: {fileID: 1888420454}
   - component: {fileID: 1888420456}
   - component: {fileID: 1888420455}
+  - component: {fileID: 1888420457}
   m_Layer: 5
   m_Name: Tower Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1888420454
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2320,7 +2320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -325, y: 150}
+  m_AnchoredPosition: {x: -310, y: 180}
   m_SizeDelta: {x: 620, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1888420455
@@ -2361,6 +2361,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888420453}
   m_CullTransparentMesh: 1
+--- !u!114 &1888420457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888420453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f9af6194c82a16439fe46774d5bc190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1980865817}
+  descText: {fileID: 757527972}
+  damage: {fileID: 1334897341}
+  speed: {fileID: 1358915377}
+  critChance: {fileID: 38707490}
+  critDamage: {fileID: 888953823}
+  magicDamage: {fileID: 1985952272}
+  mana: {fileID: 1118772393}
 --- !u!1 &1905267169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,7 +2546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d229fcffcc583ff42a986626581c37a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6918bcede553a714080c025adacaadea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2636,7 +2656,7 @@ GameObject:
   - component: {fileID: 1985952273}
   - component: {fileID: 1985952272}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MagicDamage Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
