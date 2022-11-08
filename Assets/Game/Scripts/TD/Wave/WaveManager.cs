@@ -18,27 +18,13 @@ public class WaveManager : MonoBehaviour
     }
     void Start()
     {
-        //Invoke("spawnCreep", 10);
-        //StartCoroutine(spawnWave(waveBases[0].CreepBases, 2));
         
-    }
-    public void spawnCreep()
-    {
-        Vector3 startPos = gridManager.StartCell.transform.position;
-        creepBase = GameManager.Instance.Creep;
-        Creep creep = new Creep(creepBase);
-        creep.creepObj = Instantiate(creep._base.CreepModel, new Vector3(startPos.x, 0.5f, startPos.z), Quaternion.identity) as GameObject;
-        creep.pos.x = startPos.x;
-        creep.pos.y = startPos.z;
-        creeps.Add(creep);
     }
     public void spawnCreep(CreepBase creepBase)
     {
         Vector3 startPos = gridManager.StartCell.transform.position;
         Creep creep = new Creep(creepBase);
         creep.creepObj = Instantiate(creep._base.CreepModel, new Vector3(startPos.x, 0.5f, startPos.z), Quaternion.identity) as GameObject;
-        creep.pos.x = startPos.x;
-        creep.pos.y = startPos.z;
         creeps.Add(creep);
     }
     public IEnumerator spawnWave(List<CreepBase> wave, float delay)
