@@ -5,8 +5,6 @@ using UnityEngine;
 public class CreepBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
-    bool isMoving = true;
-    CreepBase thisCreep;
     void Start()
     {
 

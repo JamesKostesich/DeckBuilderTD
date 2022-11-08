@@ -1854,6 +1854,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 74582a1e201be8d4782d76009553ab75, type: 2}
   startCell: {fileID: 0}
   endCell: {fileID: 0}
+  waveManager: {fileID: 0}
 --- !u!4 &1480681200
 Transform:
   m_ObjectHideFlags: 0
@@ -1908,6 +1909,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1480681198}
+  waveBases:
+  - {fileID: 11400000, guid: 43cd217f912c45244b7beae9c57c277f, type: 2}
+  - {fileID: 11400000, guid: 6498bd4df0315204d851dfff35f2ddae, type: 2}
 --- !u!1 &1490981989
 GameObject:
   m_ObjectHideFlags: 0

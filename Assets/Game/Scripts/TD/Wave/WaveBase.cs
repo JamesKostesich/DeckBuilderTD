@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CreepWave", menuName = "TowerDefense/CreepWave")]
-public class CreepWaveBase : ScriptableObject
+[CreateAssetMenu(fileName = "Wave", menuName = "TowerDefense/Wave")]
+public class WaveBase : ScriptableObject
 {
     [SerializeField] string title;
     [SerializeField] List<CreepBase> creepBases;
+    [SerializeField] float delay;
 
     public string Title
     {
@@ -15,5 +16,9 @@ public class CreepWaveBase : ScriptableObject
     public List<CreepBase> CreepBases
     {
         get { return creepBases; }
+    }
+    public float Delay
+    {
+        get { return delay; }
     }
 }
