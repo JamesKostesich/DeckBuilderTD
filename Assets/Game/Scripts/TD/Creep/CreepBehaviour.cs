@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CodeMonkey.HealthSystemCM;
 
-public class CreepBehaviour : MonoBehaviour
+public class CreepBehaviour : MonoBehaviour, IGetHealthSystem
 {
-    public float health;
-    // Start is called before the first frame update
-    void Start()
-    {
+    private HealthSystem healthSystem;
 
+    public float health;
+
+    private void Awake()
+    {
+        healthSystem = new HealthSystem(health);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Damage(float damage)
     {
-        
+        healthSystem.Damage(damage);
+    }
+
+    public HealthSystem GetHealthSystem()
+    {
+        return healthSystem;
     }
 }

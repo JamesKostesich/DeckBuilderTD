@@ -43,18 +43,28 @@ public class BulletBehaviour : MonoBehaviour
 
     void HitTarget()
     {
+        //On-hit effect
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 1f);
-        //Damage Math
+
+        //Check if Critical Strike
         float crit = 1;
         if(Random.Range(0,101) <= tower.critChance)
         {
             crit = tower.critDamage;
         }
+
+        //Deal damage
+        CreepBehaviour targetScript = target.GetComponent<CreepBehaviour>();
+        targetScript.Damage(tower.damage);
+
         if (creep.takeDamage(tower.damage, crit) || creep.takeMDamage(tower.magicDamage, crit))
         {
             GameManager.Instance.GetComponent<WaveManager>().killCreep(creep);
         }
+
+
+
         Destroy(gameObject);
     }
 }

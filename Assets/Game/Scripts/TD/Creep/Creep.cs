@@ -26,7 +26,7 @@ public class Creep
     {
         //returns true if dead
         creepBehaviour.health -= damage*crit;
-        if(creepBehaviour.health < 0)
+        if(creepBehaviour.health <= 0)
         {
             return true;
         }
@@ -36,7 +36,7 @@ public class Creep
     {
         //returns true if dead
         creepBehaviour.health -= damage * crit;
-        if (creepBehaviour.health < 0)
+        if (creepBehaviour.health <= 0)
         {
             return true;
         }
