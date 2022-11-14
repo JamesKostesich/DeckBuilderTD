@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
+using Random = UnityEngine.Random;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -9,8 +11,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private TowerBase tower;
     [SerializeField] private CreepBase creep;
 
+    // TD Stuff
     [SerializeField] private GameObject towerInfo;
-
     public GameObject[,] grid;
 
     public TowerBase Tower
@@ -35,3 +37,5 @@ public class GameManager : Singleton<GameManager>
         }
     }
 }
+
+
